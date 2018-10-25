@@ -29,6 +29,18 @@ npm run lint
 
 ## Components
 
+### Title
+
+```
+<Title>Well Howdy There!</Title>
+```
+
+### Comment
+
+```
+<Comment>This might be slightly important.</Comment>
+```
+
 ### Color Swatch
 
 ```
@@ -41,6 +53,7 @@ npm run lint
     }
 }]"></ColorSwatch>
 ```
+
 ### Color Contrast
 
 ```
