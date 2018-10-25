@@ -1,5 +1,5 @@
 <template>
-       <div>
+  <div>
       <!-- Only show this if we want to see a summary of WCAG-AAA compliant combinations -->
       <div v-if="summary">
         <h2 style="font-size: 1.25rem;font-weight: 700">&check; WCAG-AAA Compliant</h2>
@@ -43,46 +43,31 @@
         </div>
       </div>
       <!-- Only show this if we want to show the full matrix -->
-      <table v-if="table" style="width: auto; margin: 8px;">
-        <thead>
-          <tr>
-            <th></th>
-            <th v-for="color in colors"
-                :key="color.hex"
-                v-text="color.name"
-                style="width: 260px;">
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="color1 in colors"
-              :key="color1.hex">
-            <td v-text="color1.name"
-                style="vertical-align: middle; text-align: right; padding-right: 1rem; font-weight: bold;">
-            </td>
-            <td v-for="color2 in colors"
-                :key="color2.hex"
-                @click="copyTextToClipboard('background-color: ' + color1.hex + '; color: ' + color2.hex + ';')"
-                :title="getWCAGMessage(calculateContrast(color1.hex, color2.hex))">
-
-              <div style="display: flex; align-items: center;">
-                <div style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem;"
-                     class="cursor-copy"
-                     :style="{backgroundColor: color1.hex, color: color2.hex}">
-                  <span>A a</span>
-                </div>
-                <div v-if="color1.hex !== color2.hex"
-                     style="padding-left: 0.5rem;"
-                >
-                  <div :class="getWCAGClass(calculateContrast(color1.hex, color2.hex))">
-                    Contrast Ratio: <strong>{{ calculateContrast(color1.hex, color2.hex).toFixed(2) }}:1</strong>
-                  </div>
-                </div>
+      <ul v-if="table">
+        <li v-for="background in colors"
+            style="text-align: left;"
+            :key="background.hex">
+          <h3 v-text="background.name"></h3>
+          <ul>
+            <li v-for="foreground in colors"
+                v-if="foreground.hex !== background.hex"
+                style="display: flex; align-items: center; justify-content: flex-start; text-align: right;"
+                :key="foreground.hex"
+                :title="getWCAGMessage(calculateContrast(background.hex, foreground.hex))"
+            >
+              <div style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem;margin-right:1rem;"
+                   class="cursor-copy"
+                   @click="copyTextToClipboard('background-color: ' + background.hex + '; color: ' + foreground.hex + ';')"
+                   :style="{backgroundColor: background.hex, color: foreground.hex}">
+                <span>A a</span>
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <div :class="getWCAGClass(calculateContrast(background.hex, foreground.hex))">
+                Contrast Ratio: <strong>{{ calculateContrast(background.hex, foreground.hex).toFixed(2) }}:1</strong>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
 </template>
 
@@ -96,7 +81,7 @@
 .wcag--success {
   color: #111111;
 }
-.wcag--success::before {
+.wcag--success::after {
   content: '✅';
   padding-right: 4px;
 }
@@ -104,7 +89,20 @@
 
 <script>
   export default {
-    props: ['colors', 'table', 'summary'],
+    props: {
+      colors: {
+        type: Array,
+        required: true
+      },
+      summary: {
+        type: Boolean,
+        default: true
+      },
+      table: {
+        type: Boolean,
+        default: false
+      }
+    },
     methods: {
       colorsRatio (minimumContrast) {
         let response = [], contrast
@@ -132,7 +130,7 @@
       },
       getWCAGMessage (contrast) {
         if (contrast >= 7) {
-          return 'Fully WCAG Compliant'
+          return 'WCAG-AAA Normal'
         }
         if (contrast >= 4.5) {
           return 'WCAG AAA Large / WCAG AA Normal'

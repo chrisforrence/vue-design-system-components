@@ -10,7 +10,13 @@
       {name: 'White', hex: '#FFFFFF', meta: {hex: '#FFFFFF'}},
       {name: 'Black', hex: '#000000', meta: {hex: '#000000'}}
     ]" />
-    <ColorContrast :colors="[{name: 'Blue', hex: '#0000FF'},{name: 'Red', hex: '#FF0000'},{name: 'Green', hex: '#00FF00'},{name: 'White', hex: '#FFFFFF'},{name: 'Black', hex: '#000000'}]" :summary="true" :table="true" />
+    <ColorContrast :colors="[
+      {name: 'Blue', hex: '#0000FF', meta: {hex: '#0000FF'}},
+      {name: 'Red', hex: '#FF0000', meta: {hex: '#FF0000'}},
+      {name: 'Green', hex: '#00FF00', meta: {hex: '#00FF00'}},
+      {name: 'White', hex: '#FFFFFF', meta: {hex: '#FFFFFF'}},
+      {name: 'Black', hex: '#000000', meta: {hex: '#000000'}}
+    ]" />
   </div>
 </template>
 
