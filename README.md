@@ -43,15 +43,26 @@ npm run lint
 
 ### Color Swatch
 
+Use this component to tightly group together multiple colors
+
 ```
 <ColorSwatch :colors="[{
-    name: 'Color Name',
-    hex: '#112233',
-    meta: {
+        name: 'Gray',
         hex: '#112233',
-        rgb: 'rgb(17, 34, 51)'
-    }
-}]"></ColorSwatch>
+        meta: {
+            hex: '#112233',
+            rgb: 'rgb(17, 34, 51)',
+            scss: '$color_gray'
+        }
+    }, {
+        name: 'Gray Light',
+        hex: '#223344',
+        meta: {
+            hex: '#112233',
+            rgb: 'rgb(34, 51, 68)',
+            scss: '$color_gray_light'
+        }
+    }]"></ColorSwatch>
 ```
 
 ### Color Contrast

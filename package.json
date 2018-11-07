@@ -1,11 +1,22 @@
 {
-  "name": "dsc",
-  "version": "0.1.0",
-  "private": true,
+  "name": "design-system-components",
+  "description": "A collection of Vue components tailored towards building design systems",
+  "license": "(MIT OR Apache-2.0)",
+  "author": "Chris Forrence <chrisforrence+dsc@gmail.com>",
+  "homepage": "https://github.com/chrisforrence/design-system-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisforrence/design-system-components"
+  },
+  "bugs": "https://github.com/chrisforrence/design-system-components/issues",
+  "version": "0.2.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "pre-commit-package": "git add dist",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "clean": "rm -rf ./dist",
+    "lint": "vue-cli-service lint",
+    "package": "vue-cli-service build --target lib src/package.js",
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -14,8 +25,15 @@
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
+    "marked": "^0.5.1",
+    "pre-commit": "^1.2.2",
     "vue-template-compiler": "^2.5.17"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "eslintConfig": {
     "root": true,
     "env": {
@@ -35,9 +53,9 @@
       "autoprefixer": {}
     }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+  "pre-commit": [
+    "clean",
+    "build",
+    "pre-commit-package"
   ]
 }
