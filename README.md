@@ -7,7 +7,7 @@ This library is intended to assist developers with building bespoke design syste
 First, install the library or add it to your package.json file.
 
 ```
-npm install vue-design-system-components
+npm install --save vue-design-system-components
 ```
 
 This library is built using [vue-cli][vue-cli-build]; you can bring the design system components into your project by requiring the UMD script:
