@@ -9,7 +9,7 @@
     "url": "https://github.com/chrisforrence/vue-design-system-components"
   },
   "bugs": "https://github.com/chrisforrence/vue-design-system-components/issues",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "pre-commit-package": "git add dist",
     "build": "vue-cli-service build",
