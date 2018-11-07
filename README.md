@@ -3,28 +3,21 @@
 This library is intended to assist developers with building bespoke design systems.
 
 ## Project setup
+
+First, install the library or add it to your package.json file.
+
 ```
 npm install vue-design-system-components
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This library is built using [vue-cli][vue-cli-build]; you can bring the design system components into your project by requiring the UMD script:
 
-### Compiles and minifies for production
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+let dsc = require('vue-design-system-components/dist/vue-design-system-components.umd.js');
+const app = new Vue({
+    el: '#app',
+    components: dsc.default
+});
 ```
 
 ## Components
@@ -77,3 +70,30 @@ Use this component to tightly group together multiple colors
     name: 'Color Name',
     hex: '#FFEEDD'
 }]" :summary="true" :table="true"></design-system-color-contrast>
+
+
+## Development
+
+Want to develop on these as well? Fantastic!
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+[vue-cli-build]: https://cli.vuejs.org/guide/build-targets.html#library
