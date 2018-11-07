@@ -29,16 +29,18 @@ npm run lint
 
 ## Components
 
+This is a list of available components: more will be added over time!
+
 ### Title
 
 ```
-<Title>Well Howdy There!</Title>
+<design-system-title>Well Howdy There!</design-system-title>
 ```
 
 ### Comment
 
 ```
-<Comment>This might be slightly important.</Comment>
+<design-system-comment>This might be slightly important.</design-system-comment>
 ```
 
 ### Color Swatch
@@ -46,7 +48,7 @@ npm run lint
 Use this component to tightly group together multiple colors
 
 ```
-<ColorSwatch :colors="[{
+<design-system-color-swatch :colors="[{
         name: 'Gray',
         hex: '#112233',
         meta: {
@@ -62,16 +64,16 @@ Use this component to tightly group together multiple colors
             rgb: 'rgb(34, 51, 68)',
             scss: '$color_gray_light'
         }
-    }]"></ColorSwatch>
+    }]"></design-system-color-swatch>
 ```
 
 ### Color Contrast
 
 ```
-<ColorContrast :colors="[{
+<design-system-color-contrast :colors="[{
     name: 'Color Name',
     hex: '#112233'
 }, {
     name: 'Color Name',
     hex: '#FFEEDD'
-}]" :summary="true" :table="true"></ColorContrast>
+}]" :summary="true" :table="true"></design-system-color-contrast>
