@@ -55,7 +55,7 @@
   },
   "pre-commit": [
     "clean",
-    "build",
+    "package",
     "pre-commit-package"
   ]
 }
