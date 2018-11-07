@@ -1,10 +1,10 @@
-# Design System Components
+# Vue Design System Components
 
 This library is intended to assist developers with building bespoke design systems.
 
 ## Project setup
 ```
-npm install
+npm install vue-design-system-components
 ```
 
 ### Compiles and hot-reloads for development

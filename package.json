@@ -1,14 +1,14 @@
 {
-  "name": "design-system-components",
+  "name": "vue-design-system-components",
   "description": "A collection of Vue components tailored towards building design systems",
   "license": "(MIT OR Apache-2.0)",
   "author": "Chris Forrence <chrisforrence+dsc@gmail.com>",
-  "homepage": "https://github.com/chrisforrence/design-system-components#readme",
+  "homepage": "https://github.com/chrisforrence/vue-design-system-components#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chrisforrence/design-system-components"
+    "url": "https://github.com/chrisforrence/vue-design-system-components"
   },
-  "bugs": "https://github.com/chrisforrence/design-system-components/issues",
+  "bugs": "https://github.com/chrisforrence/vue-design-system-components/issues",
   "version": "0.2.0",
   "scripts": {
     "pre-commit-package": "git add dist",
