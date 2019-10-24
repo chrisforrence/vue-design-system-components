@@ -70,13 +70,14 @@ Use this component to tightly group together multiple colors
     name: 'Color Name',
     hex: '#FFEEDD'
 }]" :summary="true" :table="true"></design-system-color-contrast>
-
+```
 
 ## Development
 
 Want to develop on these as well? Fantastic!
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
