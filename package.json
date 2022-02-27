@@ -25,7 +25,7 @@
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "pre-commit": "^1.2.2",
     "vue-template-compiler": "^2.5.17"
   },
